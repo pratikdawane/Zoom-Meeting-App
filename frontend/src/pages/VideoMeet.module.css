@@ -1,0 +1,251 @@
+
+
+.entryContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  min-height: 100vh;
+}
+
+.entryForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  margin-top: 2rem;
+}
+
+.entryTitle {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.usernameInput {
+  width: 100%;
+  max-width: 20rem;
+  margin-bottom: 1rem !important;
+}
+
+.connectButton {
+  width: 100%;
+  max-width: 20rem;
+  height: 3.5rem !important;
+  border-radius: 10px !important;
+}
+
+.previewVideo {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.previewVideo video {
+  border-radius: 20px;
+  max-width: 100%;
+  max-height: 20rem;
+}
+
+/* Main meeting styles */
+.meetContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  position: relative;
+}
+
+.videoContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1rem;
+  background: #1c1c1c;
+}
+
+.localVideo {
+  position: absolute;
+  bottom: 3rem;
+  left: 1rem;
+  width: 20%;
+  min-width: 160px;
+  max-width: 240px;
+  border-radius: 8px;
+  z-index: 1;
+  background: #0c0b0b;
+}
+
+.remoteVideos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.remoteVideoWrapper {
+  position: relative;
+  background: #333;
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+}
+
+.remoteVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.participantName {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 0.5rem;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  background: #333;
+  gap: 1rem;
+}
+
+.controlButton {
+  background: #444 !important;
+  color: white !important;
+  width: 3rem !important;
+  height: 3rem !important;
+}
+
+.endCall {
+  background: #e74c3c !important;
+}
+
+/* Chat styles */
+.chatRoom {
+  position: absolute;
+  right: 1rem;
+  bottom: 2rem;
+  width: 300px;
+  height: 450px;
+  background: white;
+  border-radius: 8px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.chatContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.chatHeader {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.chattingDisplay {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+.message {
+  margin-bottom: 0.75rem;
+}
+
+.sender {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.messageText {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.chattingArea {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.messageInput {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.sendButton {
+  height: 2.5rem !important;
+  border-radius: 4px !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .entryContainer {
+    flex-direction: column;
+  }
+  
+  .previewVideo {
+    margin-top: 2rem;
+  }
+  
+  .remoteVideos {
+    grid-template-columns: 1fr;
+  }
+  
+  .localVideo {
+    width: 30%;
+    min-width: 120px;
+  }
+  
+  .chatRoom {
+    width: 100%;
+    height: 300px;
+    right: 0;
+    bottom: 4rem;
+  }
+  
+  .controls {
+    padding: 0.5rem;
+    gap: 0.5rem;
+  }
+  
+  .controlButton {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .entryTitle {
+    font-size: 1.5rem;
+  }
+  
+  .remoteVideos {
+    padding: 0.5rem;
+  }
+  
+  .localVideo {
+    bottom: 4.5rem;
+    min-width: 100px;
+  }
+}
